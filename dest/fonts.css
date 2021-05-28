@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'pb';
+    src: url('../font/ProximaNova-Bold.woff2') format('woff2'),
+        url('../font/ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'peb';
+    src: url('../font/ProximaNovaA-Extrabld.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Extrabld.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'pr';
+    src: url('../font/ProximaNova-Regular.woff2') format('woff2'),
+        url('../font/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
