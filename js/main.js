@@ -14,7 +14,9 @@ let backtotop = document.querySelector('.backtotop');
 let loading = document.querySelector('.loading');
 
 window.addEventListener('load', function() {
-    loading.classList.add('hidden');
+    setTimeout(() => {
+        loading.classList.add('hidden');     
+    }, 800);
 })
 
 
