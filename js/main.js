@@ -11,6 +11,12 @@ let slider = document.querySelector('.slider');
 let heightslider = slider.clientHeight;
 let heightheader = header.clientHeight;
 let backtotop = document.querySelector('.backtotop');
+let loading = document.querySelector('.loading');
+
+window.addEventListener('load', function() {
+    loading.classList.add('hidden');
+})
+
 
 function scrollhidden(heightScroll, classadd) {
     let scrollY = window.pageYOffset;
@@ -233,10 +239,6 @@ acc.forEach(function(item, index) {
         item.classList.toggle('active');
     })
 })
-
-// gallery
-
-
 
 
 
