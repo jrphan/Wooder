@@ -81,25 +81,39 @@ langItems.forEach(function (item) {
 })
 
 // tags
-let tagText = document.querySelectorAll('.new__tags .tag');
-let tagList = document.querySelectorAll('.news__list');
+let tagText = $('.new__tags .tag');
+let tagList = $('.news__list');
 
-tagText.forEach(function(item, index) {
-    item.addEventListener('click', function() {
-        let tagID = index + 1;
-    
-        tagText.forEach(function(tag) {
-            tag.classList.remove('active');
-        });
-
-        tagList.forEach(function(taglist) {
-            taglist.classList.remove('active');
-        });
-
-        item.classList.add('active');
-        document.querySelector('.news__list-' + tagID).classList.add('active');
-    })
+tagText.on('click', function() {
+    let tagID = $(this).index() + 1;
+    tagText.removeClass('active');
+    tagList.removeClass('active');
+    $(this).addClass('active');
+    $('.news__list-' + tagID).addClass('active');
 })
+
+
+// let tagText = document.querySelectorAll('.new__tags .tag');
+// let tagList = document.querySelectorAll('.news__list');
+
+// tagText.forEach(function(item, index) {
+//     item.addEventListener('click', function() {
+//         let tagID = index + 1;
+    
+//         tagText.forEach(function(tag) {
+//             tag.classList.remove('active');
+//         });
+
+//         tagList.forEach(function(taglist) {
+//             taglist.classList.remove('active');
+//         });
+
+//         item.classList.add('active');
+//         document.querySelector('.news__list-' + tagID).classList.add('active');
+//     })
+// })
+
+
 
 // menu
 let menulist = document.querySelectorAll('.menu a');
@@ -179,68 +193,101 @@ close.addEventListener('click', function(){
 })
 
 // slider 
-let itemsliders = document.querySelectorAll('.slider__item');
-let Currslider = 0;
+// let itemsliders = document.querySelectorAll('.slider__item');
+// let Currslider = 0;
 
-itemsliders.forEach(function(item, index) {
-    if(item.classList.contains('active')) {
-        Currslider = index;
-    }
-})
+// itemsliders.forEach(function(item, index) {
+//     if(item.classList.contains('active')) {
+//         Currslider = index;
+//     }
+// })
 
-function goTo(index) {
-    itemsliders[Currslider].classList.remove('active');
-    itemsliders[index].classList.add('active');
-    dotLi[Currslider].classList.remove('active');
-    dotLi[index].classList.add('active');
-    Currslider = index;
-    showNumber(Currslider + 1);
+// function goTo(index) {
+//     itemsliders[Currslider].classList.remove('active');
+//     itemsliders[index].classList.add('active');
+//     dotLi[Currslider].classList.remove('active');
+//     dotLi[index].classList.add('active');
+//     Currslider = index;
+//     showNumber(Currslider + 1);
     
-}
+// }
 
-document.querySelector('.--next').addEventListener('click', function() {
-    if(Currslider < itemsliders.length -1) {
-       goTo(Currslider + 1);
-    } else {
-       goTo(0);
+// document.querySelector('.--next').addEventListener('click', function() {
+//     if(Currslider < itemsliders.length -1) {
+//        goTo(Currslider + 1);
+//     } else {
+//        goTo(0);
+//     }
+// })
+
+// document.querySelector('.--pre').addEventListener('click', function() {
+//     if(Currslider > 0 ) {
+//         goTo(Currslider -1);
+//     } else {
+//        goTo(itemsliders.length -1);
+//     }
+// })
+
+// let number = document.querySelector('.paging .number');
+// let dotLi = document.querySelectorAll('.dotted li');
+
+// function showNumber(index) {
+//     number.innerHTML = (index).toString().padStart(2,'0');
+// }
+
+// showNumber(Currslider + 1);
+// dotLi[Currslider].classList.add('active');
+
+// dotLi.forEach(function(item, index) {
+//     item.addEventListener('click',function() {
+//         goTo(index);
+//     })
+// })
+
+// let acc = document.querySelectorAll('.accordion');
+// let panel = document.querySelectorAll('.panel');
+// let CurrId;
+
+// acc.forEach(function(item, index) {
+//     item.addEventListener('click', function() {
+//         CurrId = index;
+//         panel[CurrId].classList.toggle('active');
+//         item.classList.toggle('active');
+//     })
+// })
+
+let acc = $('.accordion');
+let panel = $('.panel');
+
+acc.on('click', function() {
+    $(this).next().toggleClass('active');
+    $(this).toggleClass('active');
+})
+
+let $carousel = $('.slider__wrap');
+$carousel.flickity({
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+    prevNextButtons: false,
+    on: {
+        ready: function() {
+            let dotted = $('.flickity-page-dots');
+            paging = $('.paging .dotted');
+            dotted.appendTo(paging);
+        },
+        change: function(index) {
+            let number = $('.paging .number');
+            let indexPage = index + 1;
+            number.text(indexPage.toString().padStart(2,0));
+        }
     }
 })
 
-document.querySelector('.--pre').addEventListener('click', function() {
-    if(Currslider > 0 ) {
-        goTo(Currslider -1);
-    } else {
-       goTo(itemsliders.length -1);
-    }
+$('.control .--pre').on('click', function() {
+    $carousel.flickity('previous');
 })
 
-let number = document.querySelector('.paging .number');
-let dotLi = document.querySelectorAll('.dotted li');
-
-function showNumber(index) {
-    number.innerHTML = (index).toString().padStart(2,'0');
-}
-
-showNumber(Currslider + 1);
-dotLi[Currslider].classList.add('active');
-
-dotLi.forEach(function(item, index) {
-    item.addEventListener('click',function() {
-        goTo(index);
-    })
+$('.control .--next').on('click', function() {
+    $carousel.flickity('next');
 })
-
-let acc = document.querySelectorAll('.accordion');
-let panel = document.querySelectorAll('.panel');
-let CurrId;
-
-acc.forEach(function(item, index) {
-    item.addEventListener('click', function() {
-        CurrId = index;
-        panel[CurrId].classList.toggle('active');
-        item.classList.toggle('active');
-    })
-})
-
-
-
