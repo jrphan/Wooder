@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="dest/style.min.css">
     <link rel="stylesheet" href="dest/fonts.css">
+    
 </head>
 
 <body> 
@@ -256,12 +257,43 @@
                             processing and the creation of wooden textbox of
                             the highest class</p>
                     </div>
-                    <div class="gallery__grid">
-                        <div class="gallery__grid-item item1"><img src="img/gallery1.jpg" alt=""></div>
+                    <!-- <div class="gallery__grid">
+                        <div class="gallery__grid-item item1">
+                            <img src="img/gallery1.jpg" alt="">
+                        </div>
                         <div class="gallery__grid-item item2"><img src="img/gallery3.jpg" alt=""></div>
                         <div class="gallery__grid-item item3"><img src="img/gallery4.jpg" alt=""></div>
                         <div class="gallery__grid-item item4"><img src="img/gallery2.jpg" alt=""></div>
                         <div class="gallery__grid-item item5"><img src="img/gallery5.jpg" alt=""></div>
+                    </div> -->
+                    <div class="gallery__carousel">
+                        <div class="carousel-img gallery__grid" itemscope data-pswp-uid="1">
+                            <figure class="gallery__grid-item item1">
+                                <a href="img/gallery1.jpg" data-size="633x400">
+                                    <img src="img/gallery1.jpg" alt="">
+                                </a>
+                            </figure>
+                            <figure class="gallery__grid-item item2">
+                                <a href="img/gallery3.jpg" data-size="633x822">
+                                    <img src="img/gallery3.jpg" alt="">
+                                </a>
+                            </figure>
+                            <figure class="gallery__grid-item item3">
+                                <a href="img/gallery4.jpg" data-size="633x400">
+                                    <img src="img/gallery4.jpg" alt="">
+                                </a>
+                            </figure>
+                            <figure class="gallery__grid-item item4">
+                                <a href="img/gallery2.jpg" data-size="633x400">
+                                    <img src="img/gallery2.jpg" alt="">
+                                </a>
+                            </figure>
+                            <figure class="gallery__grid-item item5">
+                                <a href="img/gallery5.jpg" data-size="633x400">
+                                    <img src="img/gallery5.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -425,12 +457,51 @@
             <div class="backtotop"><a href="#">Back to top</a></div>
         </div>
     </footer>
+    <!-- popup-video -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="popup-video">
         <div class="iframe__wrap">
             <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="close">X</div>
         </div>
     </div>
+    <!-- popup-img -->
 
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
