@@ -433,3 +433,4 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     }
 };
 initPhotoSwipeFromDOM('.carousel-img');
+
