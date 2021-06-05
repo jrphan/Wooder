@@ -257,15 +257,6 @@
                             processing and the creation of wooden textbox of
                             the highest class</p>
                     </div>
-                    <!-- <div class="gallery__grid">
-                        <div class="gallery__grid-item item1">
-                            <img src="img/gallery1.jpg" alt="">
-                        </div>
-                        <div class="gallery__grid-item item2"><img src="img/gallery3.jpg" alt=""></div>
-                        <div class="gallery__grid-item item3"><img src="img/gallery4.jpg" alt=""></div>
-                        <div class="gallery__grid-item item4"><img src="img/gallery2.jpg" alt=""></div>
-                        <div class="gallery__grid-item item5"><img src="img/gallery5.jpg" alt=""></div>
-                    </div> -->
                     <div class="gallery__carousel">
                         <div class="carousel-img gallery__grid" itemscope data-pswp-uid="1">
                             <figure class="gallery__grid-item item1">
@@ -442,22 +433,44 @@
                 </div>
             </div>
         </section>
-        <section class="photos">
-            <div class="item"><img src="img/gallery1.jpg" alt=""></div>
-            <div class="item"><img src="img/gallery2.jpg" alt=""></div>
-            <div class="item"><img src="img/gallery3.jpg" alt=""></div>
-            <div class="item"><img src="img/gallery4.jpg" alt=""></div>
-            <div class="item"><img src="img/gallery5.jpg" alt=""></div>
-        </section>
+        <div class="photos"  data-flickity='{ "freeScroll": true, "prevNextButtons": false, "autoPlay": 1500, "wrapAround": true, "pauseAutoPlayOnHover": true }'>
+            <div class="photos-item">
+                <img src="img/gallery1.jpg" alt="" srcset="">
+            </div>
+            <div class="carousel-cell">
+                <img src="img/gallery2.jpg" alt="" srcset="">   
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery4.jpg" alt="" srcset="">
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery5.jpg" alt="" srcset="">
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery1.jpg" alt="" srcset="">
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery2.jpg" alt="" srcset="">
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery5.jpg" alt="" srcset="">
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery1.jpg" alt="" srcset="">
+            </div>
+            <div class="photos-item">
+                <img src="img/gallery2.jpg" alt="" srcset="">
+            </div>
+        </div>
     </main>
     <footer>
         <div class="container">
-            <div class="copy">© 2016 WOODER, Demo by CFD</div>
+            <div class="copy">© 2021 WOODER</div>
             <div class="logoft"><a href=""><img src="img/logo.png" alt=""></a></div>
             <div class="backtotop"><a href="#">Back to top</a></div>
         </div>
     </footer>
-    <!-- popup-video -->
+    <!-- popup-image -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
         <div class="pswp__scroll-wrap">
@@ -493,15 +506,14 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>  
+    <!-- popup-video -->
     <div class="popup-video">
         <div class="iframe__wrap">
             <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="close">X</div>
         </div>
     </div>
-    <!-- popup-img -->
 
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
